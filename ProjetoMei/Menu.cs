@@ -37,7 +37,8 @@ namespace ProjetoMei
 
             if (isOpen == false)
             {
-                Projeto.AddFatura f2 = new Projeto.AddFatura();
+                
+                AddFatura f2 = new AddFatura();
                 f2.MdiParent = this;
                 f2.Show();
             }
