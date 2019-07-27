@@ -45,6 +45,10 @@ namespace ProjetoMei
         {
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             flowLayoutPanel1.Controls.Add(pictureBox1);
+
+            panel1.Show();
+            flowLayoutPanel1.Show();
+            panel2.Hide();
         }
 
 
@@ -125,6 +129,16 @@ namespace ProjetoMei
         private void l(object sender, EventArgs e)
         {
 
+            panel1.Show();
+            flowLayoutPanel1.Show();
+            panel2.Hide();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            panel1.Hide();
+            flowLayoutPanel1.Hide();
+            panel2.Show();
         }
 
         private string ocr(Rectangle rtg)

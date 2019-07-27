@@ -42,14 +42,24 @@
             this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(672, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -70,14 +80,14 @@
             // 
             // textBoxResultado
             // 
-            this.textBoxResultado.Location = new System.Drawing.Point(145, 104);
+            this.textBoxResultado.Location = new System.Drawing.Point(25, 76);
             this.textBoxResultado.Name = "textBoxResultado";
             this.textBoxResultado.Size = new System.Drawing.Size(221, 20);
             this.textBoxResultado.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(45, 102);
+            this.button1.Location = new System.Drawing.Point(25, 38);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -160,30 +170,74 @@
             this.groupBox1.Controls.Add(this.textBoxData);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBoxNumero);
-            this.groupBox1.Location = new System.Drawing.Point(204, 176);
+            this.groupBox1.Location = new System.Drawing.Point(25, 121);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 334);
+            this.groupBox1.Size = new System.Drawing.Size(572, 529);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados fatura";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(229, 260);
+            this.button2.Location = new System.Drawing.Point(476, 488);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 11;
             this.button2.Text = "Continuar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.textBoxResultado);
+            this.panel1.Location = new System.Drawing.Point(27, 53);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(601, 630);
+            this.panel1.TabIndex = 12;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.flowLayoutPanel2);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Location = new System.Drawing.Point(27, 53);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(638, 896);
+            this.panel2.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 47);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Artigos da fatura:";
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.pictureBox2);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(16, 76);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(606, 373);
+            this.flowLayoutPanel2.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(603, 370);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // AddFatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBoxResultado);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "AddFatura";
             this.Text = "AddFatura";
@@ -192,8 +246,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -213,5 +272,10 @@
         private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label5;
     }
 }
