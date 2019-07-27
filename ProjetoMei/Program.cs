@@ -12,6 +12,7 @@ namespace ProjetoMei
         [STAThread]
         static void Main(string[] args)
         {
+
             Application.Run(new Menu());
         }
     }

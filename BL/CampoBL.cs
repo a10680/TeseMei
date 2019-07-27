@@ -2,17 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+
 
 namespace BL
 {
-    class CampoBL
+    public class CampoBL
     {
 
 
-        bool verificaData(string data) {
+        public bool verificaData(string data) {
             try
             {
-                DateTime dt = DateTime.Parse(data);
+                
+                if (data.Contains("—"))
+                {
+                    string dataAlterada=data.Replace("—", "-");
+                    DateTime dt = DateTime.Parse(dataAlterada);
+                    return true;
+                }
+
+                DateTime dtz = DateTime.Parse(data);
                 return true;
             }
             catch
@@ -21,11 +31,11 @@ namespace BL
             }
         }
 
-       bool verificaNIF(string nif)
+       public bool verificaNIF(string nif)
         {
             try
             {
-                if (nif.Length== 9 && nif.Contains("[0-9]+"))
+                if (nif.Length == 9 && nif.All(Char.IsDigit))
                 {
                     return true;
                 }
@@ -38,12 +48,16 @@ namespace BL
             }
         }
 
-        bool verificaValorTotal(string valor)
+        public bool verificaValorTotal(string valor)
         {
+
             try
             {
+
+                string value = Regex.Replace(valor, "[A-Za-z ]", "");
+                double parsedValue = double.Parse(value);
                 float valorR;
-                if (float.TryParse(valor, out valorR))
+                if (float.TryParse(value, out valorR))
                 {
                     return true;
                 }
@@ -51,7 +65,7 @@ namespace BL
             }
             catch
             {
-
+                return false;
                 throw;
             }
         }

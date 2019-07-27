@@ -11,6 +11,10 @@ using Emgu.CV;
 using Emgu.CV.Structure;
 using System.Diagnostics;
 using Emgu.CV.CvEnum;
+using BL;
+
+
+
 
 
 namespace ProjetoMei
@@ -18,7 +22,7 @@ namespace ProjetoMei
     public partial class AddFatura : Form
     {
 
-
+        CampoBL campos = new CampoBL();
 
         Image<Bgr, byte> image, resizedImage;
         Image File;
@@ -28,7 +32,7 @@ namespace ProjetoMei
         bool IsMouseDown = false;
         List<string> referencias = new List<string>();
         PictureBox pb;
-
+       
         string nif;
 
         public AddFatura()
@@ -159,6 +163,24 @@ namespace ProjetoMei
             //}
             //textBox1.Text = output;
             //textData.Text = output;
+
+           
+            if (campos.verificaData(strArrayOne[0]))
+            {
+                textBoxData.Text = strArrayOne[0];
+            }
+            else if (campos.verificaNIF(strArrayOne[0]))
+            {
+                textBoxNif.Text = strArrayOne[0];
+            }
+            else if (campos.verificaValorTotal(strArrayOne[0]))
+            {
+                textBoxTotal.Text = strArrayOne[0];
+            }
+            else
+            {
+                textBoxNumero.Text = strArrayOne[0];    
+            }
             return strArrayOne[0];
         }
     }
